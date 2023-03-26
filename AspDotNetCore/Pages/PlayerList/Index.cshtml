@@ -1,0 +1,65 @@
+﻿@page
+@model AspDotNetCore.Pages.PlayerList.IndexModel
+@{
+}
+
+<div class="container row p-0 m-0">
+<div class="col-9">
+
+	<h2 class="text-info">Player List</h2>
+		<div class="col-3">
+			<a asp-page="Create" class="btn btn-info form-control text-white" >Create New Player</a>
+
+		</div>
+
+		
+		<div class="col-12 border p-3 mt-3">
+			<form method="post">
+				@if(Model.players.Count()>0)
+				{
+					<table class="table table-striped border">
+						<tr class="table-secondary">
+							<th><label asp-for="players.FirstOrDefault().Id"></label></th>
+							
+						<th><label asp-for="players.FirstOrDefault().Name"></label></th>
+						<th>Action </th>
+						</tr>
+						@foreach (var item in Model.players)
+						{
+							<tr>
+								<td>@Html.DisplayFor(x=>item.Id)</td>
+								<td>@Html.DisplayFor(x=>item.Name)</td>
+								<td>
+									<button asp-page-handler="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete </button>
+									<a asp-page="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-success text-white">Edit</a>
+									</td>
+
+
+
+							</tr>
+						}
+						
+				</table>
+				}
+				else
+				{
+					<p>No player Available in the list</p>
+				}
+
+			</form>
+			
+		</div>
+</div>
+</div>
+	
+
+	
+
+
+
+
+
+
+
+
+	

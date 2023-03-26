@@ -1,0 +1,35 @@
+﻿@page
+@model AspDotNetCore.Pages.PlayerList.CreateModel
+@{
+}
+<h2> Create new Players</h2>
+
+
+<div class="border container" style="padding:30px;">
+    <form method="post">
+        <div class="form-group row">
+            <div class="col-3">
+                <label> Player Name </label>
+                
+            </div>
+
+            <div class="col-6">
+                <input asp-for="Player.Name"  class="form-control" />
+
+            </div>
+
+
+        </div>
+        <div <div class="form-group row">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Create" class="btn btn-primary form-control" />
+                
+
+            </div>
+            <div class="col-3">
+                <a asp-page="Index" class="btn btn-success form-control" >Cancel</a>
+            </div>
+        </div>
+
+        </form>
+        </div>
